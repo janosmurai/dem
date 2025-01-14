@@ -7,8 +7,7 @@ from dem.core.tool_images import ToolImage
 from dem.core.platform import Platform
 from dem.core.exceptions import PlatformError
 from dem.cli.console import stderr, stdout
-from dem.cli.tui.renderable.menu import SelectMenu
-from dem.cli.tui.window.dev_env_settings_window import DevEnvSettingsWindow
+from dem.cli.tui.window.dev_env_settings_window import DevEnvSettingsScreen
 from dem.cli.tui.printable_tool_image import PrintableToolImage, convert_to_printable_tool_images
 
 def get_confirm_from_user() -> str:
@@ -106,13 +105,13 @@ def open_dev_env_settings_panel(already_selected_tool_images: list[str],
         Exceptions:
             typer.Abort -- if the user cancels the operation
     """
-    dev_env_settings_panel = DevEnvSettingsWindow(printable_tool_images, already_selected_tool_images)
+    dev_env_settings_panel = DevEnvSettingsScreen(printable_tool_images, already_selected_tool_images)
     dev_env_settings_panel.wait_for_user()
 
     if "cancel" in dev_env_settings_panel.cancel_save_menu.get_selection():
         raise typer.Abort()
 
-    return dev_env_settings_panel.tool_image_menu.get_selected_tool_images()
+    return dev_env_settings_panel.tool_image_selector_widget.get_selected_tool_images()
 
 def update_dev_env(dev_env: DevEnv, selected_tool_images: list[str]) -> None:
     """ Update the Development Environment.

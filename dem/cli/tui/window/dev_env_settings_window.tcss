@@ -1,0 +1,27 @@
+DevEnvSettingsWindow {
+    layout: vertical;
+}
+
+.dev_env_settings_screen {
+    layout: grid;
+    grid-size: 2 3;
+    grid-gutter: 1;
+}
+
+.tool_image_selector {
+    row-span: 2;
+    height: 100%;
+}
+
+.dev_env_status {
+    row-span: 2;
+    height: 100%;
+}
+
+.cancel_container {
+    align: right middle;
+}
+
+.save_container {
+    align: left middle;
+}
