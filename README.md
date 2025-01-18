@@ -170,3 +170,4 @@ catalogs and download a copy of the Development Environment descriptor to your l
 A DevEnv can be installed from your local catalog.
 
 ![DevEnv installation](/docs/wp-content/dev_env_installation.png)
+test
