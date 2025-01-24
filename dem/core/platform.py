@@ -239,7 +239,7 @@ class Platform(Core):
         """
         self.user_output.msg(f"\nAssigning the {dev_env_to_assign.name} Development Environment to the project at {project_path}")
 
-        path: str = f"{project_path}/.axem"
+        path: str = f"{project_path}/.dem"
         if not os.path.isdir(path):
             os.mkdir(path)
 
